@@ -14,7 +14,7 @@ def apply_filter(img: np.array) -> np.array:
     return img
 
 
-@api_bp.route("/apply_filter/", methods=["POST"])
+@api_bp.route("/apply_filter", methods=["POST"])
 def apply_filter_handler() -> Response:
     current_request = request
     # convert string of image data to uint8
