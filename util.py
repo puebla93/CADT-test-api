@@ -26,6 +26,12 @@ def gray_scale_filter(img: np.ndarray) -> np.ndarray:
     return gray_scale_img
 
 
+def sepia_filter(img: np.ndarray) -> np.ndarray:
+    sepia_kernel = np.array([[0.272, 0.534, 0.131],[0.349, 0.686, 0.168],[0.393, 0.769, 0.189]])
+    sepia_img = cv2.filter2D(src=img, kernel=sepia_kernel, ddepth=-1)
+    return sepia_img
+
+
 def apply_filter(img: np.ndarray, filter_func: str = "emboss") -> np.ndarray:
     if filter_func == "emboss":
         return emboss_filter(img)
@@ -35,4 +41,6 @@ def apply_filter(img: np.ndarray, filter_func: str = "emboss") -> np.ndarray:
         return canny_edge_filter(img)
     if filter_func == "grayScale":
         return gray_scale_filter(img)
+    if filter_func == "sepia":
+        return sepia_filter(img)
     raise ValueError("Invalid fiter function")
