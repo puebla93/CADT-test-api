@@ -2,3 +2,5 @@
 pylint
 pycodestyle
 autopep8
+pytest
+pytest-mock
