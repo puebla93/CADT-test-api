@@ -17,7 +17,7 @@ def gaussian_blur_filter(img: np.ndarray) -> np.ndarray:
 
 
 def canny_edge_filter(img: np.ndarray) -> np.ndarray:
-    canny_edge_img = cv2.Canny(img,100,200)
+    canny_edge_img = cv2.Canny(img, 100, 200)
     return canny_edge_img
 
 
