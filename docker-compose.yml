@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  api:
+    build: .
+    image: "cadt-api:local"
+    command: python app.py
+    volumes:
+      - .:/api
+    ports:
+      - "5000:5000"
+
+  client:
+    build: ../client
+    image: "cadt-client:local"
+    command: npm run dev
+    volumes:
+      - ../client:/client
+    ports:
+      - "3000:3000"
